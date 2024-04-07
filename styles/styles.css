@@ -1,0 +1,43 @@
+        /**************/
+        /* CSS REMEDY */
+        /**************/
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        /*********************/
+        /* CUSTOM PROPERTIES */
+        /*********************/
+        :root {
+            /* startje */
+            --color-text: #111;
+            --color-background: #eee;
+            --main-color: #171A20;
+            --witte-button: #F4F4F4A6;
+            --witte-tekst: #FFFF;
+            --donkere-button: #171A20CC;
+            --color-zwart: black;
+            --witte-border: white;
+            --zwarte-background: black;
+            --rood-color: red;
+        }
+
+        body,
+        html {
+            font-family: Gotham Book;
+            list-style-type: none;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: "Gotham Book";
+            src: url("../fonts/gotham_book-webfont.woff") format;
+        }
+
