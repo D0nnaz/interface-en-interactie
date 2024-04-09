@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.getElementById("close-button");
   const voiceOver = new Audio("../assets/mp3/voiceoverroom1.m4a");
   const resumeButton = document.getElementById("resume-voiceover");
-  const disableButton = document.getElementById("disable-voiceover")
-    
+  const disableButton = document.getElementById("disable-voiceover");
+  let isFirstTime = true;
+
   resumeButton.addEventListener("click", () => {
     voiceOver.play();
   });
@@ -19,9 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
   disableButton.addEventListener("click", () => {
     voiceOver.pause();
   });
+
   voiceOver.addEventListener("ended", () => {
     overlay.style.display = "none";
+    if (notebook.style.display !== "none") {
+      notebook.style.display = "none";
+    }
   });
+
   storyButton.addEventListener("click", () => {
     overlay.style.display = "block";
     console.log(overlay.style.display);
@@ -42,23 +48,17 @@ document.addEventListener("DOMContentLoaded", function () {
         counter++;
         counterDisplay.textContent = `${counter}/5`;
         console.log(counter);
+        const itemValue = item.getAttribute("data-value");
+        const notebookItem = document.createElement("li");
+        notebookItem.textContent = itemValue;
+        notebook.appendChild(notebookItem);
       }
     });
   });
+
   window.addEventListener("load", () => {
     overlay.style.display = "block";
     voiceOver.play();
-  });
-
-
-
-  let isFirstTime = true;
-
-  voiceOver.addEventListener("ended", () => {
-    overlay.style.display = "none";
-    if (notebook.style.display !== "none") {
-      notebook.style.display = "none";
-    }
   });
 
   closeButton.addEventListener("click", () => {
@@ -72,3 +72,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+window.addEventListener("DOMContentLoaded", (event) => {
+  positionItems();
+});
+
+function positionItems() {
+  const backgroundImage = document.getElementById("backgroundImage");
+  const items = document.querySelectorAll(".item");
+
+  const backgroundRect = backgroundImage.getBoundingClientRect();
+
+  items.forEach((item) => {
+    const itemRect = item.getBoundingClientRect();
+
+    // Bereken de nieuwe positie van het item op basis van de positie van de achtergrondafbeelding
+    const newItemLeft = itemRect.left - backgroundRect.left;
+    const newItemTop = itemRect.top - backgroundRect.top;
+
+    // Pas de positie van het item aan
+    item.style.left = newItemLeft + "px";
+    item.style.top = newItemTop + "px";
+  });
+}

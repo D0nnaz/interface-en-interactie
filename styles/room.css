@@ -1,0 +1,118 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#room1{
+background-image: url(../assets/images/room1/room1.jpeg);
+}
+#room2 {
+    background-image: url(../assets/images/room2/room2.webp);
+}
+#room3 {
+    background-image: url(../assets/images/room3/room3.jpeg);
+}
+    
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none;
+    z-index: 100;
+}
+
+#notebook {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: red;
+    display: none;
+}
+
+#counter {
+    font-size: 5em;
+    color: white;
+}
+
+#story-button,
+#notebook-button,
+#exit-button {
+    position: fixed;
+    bottom: 10px;
+}
+
+#story-button {
+    left: 10px;
+}
+
+#notebook-button {
+    right: 10px;
+}
+
+#exit-button {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+img {
+    image-rendering: pixelated;
+    filter: blur(1.5px) grayscale(20%)
+}
+
+#wheelchair {
+    width: 70em;
+    position: absolute;
+    bottom: -50em;
+    right: -40em;
+}
+
+#ventilator{
+        width: 70em;
+            position: absolute;
+            bottom: -50em;
+            right: 30%;
+}
+
+
+
+#feeding-tube {
+    width: 13em;
+    position: absolute;
+    bottom: 5.5em;
+    left: 0em;
+    transform: skewY(-5deg);
+    overflow: hidden;
+}
+
+#medicine{
+    width:2em;
+    position: absolute;
+    top: 26.8em;
+    right: 32em;
+    opacity: 0.7;
+}
+
+#hair {
+width: 12em;
+    position: absolute;
+    top: 7em;
+    left: 28.5em;
+    opacity: 0.7;
+}
+
+.item {
+    transition: opacity 1s ease-out;
+}
+
+.item.hide {
+    opacity: 0 !important;
+}

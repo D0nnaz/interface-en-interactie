@@ -1,43 +1,92 @@
-        /**************/
-        /* CSS REMEDY */
-        /**************/
+body {
+    background-image: url(../assets/images/room1/room1.jpeg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: top;
+}
 
-        *,
-        *::after,
-        *::before {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    display: none;
+    z-index: 100;
+}
 
-        /*********************/
-        /* CUSTOM PROPERTIES */
-        /*********************/
-        :root {
-            /* startje */
-            --color-text: #111;
-            --color-background: #eee;
-            --main-color: #171A20;
-            --witte-button: #F4F4F4A6;
-            --witte-tekst: #FFFF;
-            --donkere-button: #171A20CC;
-            --color-zwart: black;
-            --witte-border: white;
-            --zwarte-background: black;
-            --rood-color: red;
-        }
+#notebook {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: red;
+    display: none;
+}
 
-        body,
-        html {
-            font-family: Gotham Book;
-            list-style-type: none;
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+#counter{
+    font-size: 5em;
+    color: white;
+}
 
-        @font-face {
-            font-family: "Gotham Book";
-            src: url("../fonts/gotham_book-webfont.woff") format;
-        }
+#story-button,
+#notebook-button,
+#exit-button {
+    position: fixed;
+    bottom: 10px;
+}
 
+#story-button {
+    left: 10px;
+}
+
+#notebook-button {
+    right: 10px;
+}
+
+#exit-button {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.item {
+    transition: opacity 1s ease-out;
+}
+
+.item.hide {
+    opacity: 0;
+}
+
+img {
+    width: 15em;
+}
+
+#item1room1{
+    position: absolute;
+    bottom: 12em;
+    right: 21em;
+        width: 10em;
+}
+
+#item3room1 {
+    position: absolute;
+    bottom: -1em;
+    right: 40em;
+    width: 10em;
+}
+
+#item4room1{
+    position: absolute;
+        bottom: -13em;
+        right: -10em;
+        width: 25em;
+}
+
+#item5room1 {
+    position: absolute;
+        bottom: 8em;
+        left: 40em;
+        width: 5em;
+}

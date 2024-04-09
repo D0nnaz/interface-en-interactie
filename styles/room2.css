@@ -1,43 +1,71 @@
-        /**************/
-        /* CSS REMEDY */
-        /**************/
+body {
+    background-image: url(../assets/images/room2/room2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
 
-        *,
-        *::after,
-        *::before {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
 
-        /*********************/
-        /* CUSTOM PROPERTIES */
-        /*********************/
-        :root {
-            /* startje */
-            --color-text: #111;
-            --color-background: #eee;
-            --main-color: #171A20;
-            --witte-button: #F4F4F4A6;
-            --witte-tekst: #FFFF;
-            --donkere-button: #171A20CC;
-            --color-zwart: black;
-            --witte-border: white;
-            --zwarte-background: black;
-            --rood-color: red;
-        }
+#notebook {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: red;
+    display: none;
+}
 
-        body,
-        html {
-            font-family: Gotham Book;
-            list-style-type: none;
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+#counter {
+    font-size: 5em;
+    color: white;
+}
 
-        @font-face {
-            font-family: "Gotham Book";
-            src: url("../fonts/gotham_book-webfont.woff") format;
-        }
+#story-button,
+#notebook-button,
+#exit-button {
+    position: fixed;
+    bottom: 10px;
+}
 
+#story-button {
+    left: 10px;
+}
+
+#notebook-button {
+    right: 10px;
+}
+
+#exit-button {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.item {
+    transition: opacity 1s ease-out;
+}
+
+.item.hide {
+    opacity: 0;
+}
+
+img {
+    image-rendering: pixelated;
+    filter: blur(1.5px);
+}
+
+#wheelchair {
+    width: 50em;
+    position: absolute;
+    bottom: -50em;
+    right: -25em;
+}
