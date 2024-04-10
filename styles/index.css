@@ -105,7 +105,7 @@ body {
 }
 
 #passwordOverlay,
-#gypsyQuestionForm {
+#gypsyQuestionForm{
         display: none;
         position: fixed;
         width: 100%;
@@ -115,6 +115,8 @@ body {
         z-index: 9999;
         display: none;
 }
+
+
 
 #gypsyQuestionForm {
         flex-direction: column;
@@ -223,3 +225,31 @@ h2 {
         display: none;
 }
 
+ #deeDeeOverlay {
+         display: none;
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         background: black;
+         z-index: 9999;
+         display: none;
+         color: white;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+ }
+
+ .game-over{
+        color: red;
+        font-size: 7em;
+ }
+
+ .try-again {
+         background-image: url(../assets/images/buttons/try-again.png);
+         background-size: 70%;
+         background-color: transparent;
+         background-repeat: no-repeat;
+         position: relative;
+         padding: 6em 10em;
+ }

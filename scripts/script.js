@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const doorPasswords = {
     room1: "",
-    room2: "12345",
-    room3: "123",
+    room2: "7894",
+    room3: "71652",
     room4: "gypsyQuestions",
   };
 
@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const bellAudio = new Audio("../assets/mp3/bell.mp3");
 
-  const deeDeeOverlay = document.createElement("div");
-  deeDeeOverlay.id = "deeDeeOverlay";
-  deeDeeOverlay.style.display = "none";
-  deeDeeOverlay.textContent = "Dee Dee found you";
-  document.body.appendChild(deeDeeOverlay);
+  
 
   const gypsyQuestions = [
     { question: "Question 1 about Gypsy?", answer: "Sleep apnea" },
@@ -99,28 +95,45 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  document
-    .querySelector(".close-password")
-    .addEventListener("click", function () {
+document
+  .getElementById("submitPassword")
+  .addEventListener("click", function () {
+    if (passwordInput.value === doorPasswords[activeDoor.id]) {
+      activeDoor.src = "./assets/images/deuropen.png";
+      activeDoor.classList.add("open-door");
+      localStorage.setItem(activeDoor.id, "open");
       passwordOverlay.style.display = "none";
-      gypsyQuestionForm.style.display = "none";
-    });
-
-  document
-    .getElementById("submitPassword")
-    .addEventListener("click", function () {
-      if (passwordInput.value === doorPasswords[activeDoor.id]) {
-        activeDoor.src = "./assets/images/deuropen.png";
-        activeDoor.classList.add("open-door");
-        localStorage.setItem(activeDoor.id, "open");
-        passwordOverlay.style.display = "none";
-        passwordInput.value = "";
-        audioDoor.play();
-      } else {
-        passwordInput.value = "";
-        wrongPassword.play();
+      passwordInput.value = "";
+      audioDoor.play();
+      incorrectPasswordAttempts = 0;
+    } else {
+      passwordInput.value = "";
+      wrongPassword.play();
+      incorrectPasswordAttempts++;
+      if (incorrectPasswordAttempts >= 3) {
+        bellAudio.play();
+        setTimeout(() => {
+          document.getElementById("deeDeeOverlay").style.display = "flex";
+        }, 1000); 
       }
-    });
+    }
+  });
+
+    document
+      .querySelector(".close-password")
+      .addEventListener("click", function () {
+        passwordOverlay.style.display = "none";
+        gypsyQuestionForm.style.display = "none";
+        document.getElementById("deeDeeOverlay").style.display = "none";
+      });
+  
+  document.querySelector(".try-again").addEventListener("click", function () {
+    document.getElementById("deeDeeOverlay").style.display = "none";
+    incorrectPasswordAttempts = 0; 
+            passwordOverlay.style.display = "none";
+            gypsyQuestionForm.style.display = "none";
+  });
+
 
   const resetButton = document.getElementById("resetButton");
   resetButton.addEventListener("click", function () {
