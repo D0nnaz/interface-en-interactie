@@ -24,7 +24,7 @@
         margin: 0;
         overflow: hidden;
         max-width: 1792px;
-        cursor: url(../assets/images/cursor.png) 30 25, auto;
+        /* cursor: url(../assets/images/cursor.png) 30 25, auto; */
     }
 
        
@@ -90,7 +90,6 @@
         animation: shake 0.5s infinite;
         filter: invert(1);
         transition: 0.3s ease-in-out;
-                cursor: url(../assets/images/cursor.png) 25 25, auto;
     }
 
     @keyframes shake {

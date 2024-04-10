@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const doorPasswords = {
     room1: "",
-    room2: "7894",
+    room2: "78945",
     room3: "71652",
     room4: "gypsyQuestions",
   };
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const gypsyQuestions = [
     { question: "Question 1 about Gypsy?", answer: "Sleep apnea" },
     { question: "Question 2 about Gypsy?", answer: "2005" },
-    { question: "Question 3 about Gypsy?", answer: "16" },
+    { question: "Question 3 about Gypsy?", answer: "3718" },
   ];
 
   const audioDoor = new Audio("../assets/mp3/dooropen.mp3");
