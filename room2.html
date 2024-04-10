@@ -12,30 +12,31 @@
 	<link rel="icon" type="image/svg+xml" href="./images/teslalogorood.png">
 </head>
 
-<body id="room1">
-	<div id="overlay">
-		<p>Text overlay content</p>
-		<button id="disable-voiceover">Disable Voiceover</button>
-		<button id="resume-voiceover">Resume Voiceover</button>
-
-		<button id="close-button">Close</button>
+<body id="room2">
+	<div id="room2-overlay" class="overlay">
+		<button id="room2-disable-voiceover" class="disable-voiceover"></button>
+		<button id="room2-resume-voiceover" class="resume-voiceover"></button>
+		<button id="room2-close-button" class="close-button"></button>
+		<p>
+In 2005, Hurricane Katrina devastated our apartment and all our belongings, including all medical records. With no medical records available, Dee Dee had free rein. Fortunately, we received a free house and car as aid. Additionally, a GoFundMe page was set up, resulting in substantial financial support. The excessive medication led to deterioration of my teeth, requiring further medical treatment. As a result, I lost some of my teeth and now only have 16 real ones remaining. I secretly created a Facebook account, something strictly forbidden. I wasn't allowed online at all without my mother's supervision, let alone having my own Facebook page. It was anything but intentional. My Facebook page had a false name, so it was truly a secret account under the name Emma Rose. This allowed me to communicate with my boyfriend, Nick. When I turned 19, I discovered a medical ID card with a strange birthdate on it: 1991, while my mother always claimed I was born in 1995. This began to raise doubts about the truth of the things my mother had told me.</p>
 	</div>
 
-	<img id="item1" class="item" src="/assets/images/room2/wheelchair.jpeg" alt="Item 1">
-	<!-- <img id="item2" class="item" src="/assets/images/room1/evidence2.jpeg" alt="Item 2">
-	<img id="item3" class="item" src="/assets/images/room1/evidence3.jpeg" alt="Item 3">
-	<img id="item4" class="item" src="/assets/images/room1/evidence4.jpeg" alt="Item 4">
-	<img id="item5" class="item" src="/assets/images/room1/evidence5.jpeg" alt="Item 5"> -->
+	<img id="keys" class="room2-item item" src="./assets/images/room2/keys.png" alt="Item 1" data-value="Keys - 7">
+	<img id="tooth" class="room2-item item" src="./assets/images/room2/teeth.png" alt="Item 2" data-value="Tooth - 16">
+	<img id="laptop" class="room2-item item" src="./assets/images/room2/laptop.png" alt="Item 3"
+		data-value="Laptop - 5">
+	<img id="card" class="room2-item item" src="./assets/images/room2/card.png" alt="Item 4" data-value="Card - 2">
+	<img id="taylor" src="./assets/images/room2/taylor.jpeg" alt="taylor">
 
-	<button id="story-button">Verhaal</button>
+	<button id="room2-story-button" class="story-button"></button>
 
-	<div id="notebook">
-		<div id="counter">0/5</div>
+	<div id="room2-notebook" class="notebook">
+		<div id="room2-counter" class="counter">0/</div>
 	</div>
 
-	<button id="notebook-button">Open Notitieboekje</button>
+	<button id="room2-notebook-button" class="notebook-button"></button>
 
-	<a href="hallway.html" id="exit-button">Exit</a>
+	<a class="exit-button"></a>
 
 	<script src="/scripts/room.js"></script>
 </body>

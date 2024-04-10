@@ -8,12 +8,51 @@
 
 	<title>Journalistic Journey: Decrypting Gypsy's Narrative</title>
 	<link href="styles/styles.css" rel="stylesheet">
-	<link href="styles/hallway.css" rel="stylesheet">
+	<link href="styles/index.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="./images/teslalogorood.png">
 </head>
 
 <body>
 
+	<div class="wall"></div>
+	<img class="door" id="room1" src="./assets/images/deurdicht.png" alt="Door closed">
+	<img class="door" id="room2" src="./assets/images/deurdicht.png" alt="Door closed">
+	<img class="door" id="room3" src="./assets/images/deurdicht.png" alt="Door closed">
+	<img class="door outside" id="room4" src="./assets/images/deurdicht.png" alt="Door closed">
+	<img class = "disney" src="./assets/images/disney.gif" alt="Disney">
+	<button id="resetButton">Reset</button>
+
+	<div id="passwordOverlay">
+		<button class = "close-password"></button>
+					<button class="disney-button"></button>
+
+		<div class="passwordBox">
+			<h2>Enter Password</h2>
+			<input type="password" id="passwordInput" placeholder="???">
+			<button id="submitPassword"></button>
+		</div>
+	</div>
+
+<form id="gypsyQuestionForm" style="display: none;">
+			<button class="close-password"></button>
+
+			<div class="passwordBox">
+						<h2>Anwser these questions</h2>
+					<p>With which condition did it all start for Gypsy?</p>
+	<input type="text" id="gypsyAnswer1" placeholder="Answer question 1">
+		<p>In which year did Hurricane Katrina hit our appartment?</p>
+	<input type="text" id="gypsyAnswer2" placeholder="Answer question 2">
+			<p>How many real teeth do I have?</p>
+	<input type="text" id="gypsyAnswer3" placeholder="Answer question 3">
+	<button type="button" id="checkGypsyAnswers"></button>
+</div>
+
+</form>
+
+<div id="deeDeeOverlay">
+</div>
+
+	<script src="/scripts/script.js"></script>
 
 </body>
 

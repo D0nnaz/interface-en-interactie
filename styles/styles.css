@@ -1,32 +1,69 @@
        *,
-        *::after,
-        *::before {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+       *::after,
+       *::before {
+           box-sizing: border-box;
+           padding: 0;
+           margin: 0;
+           /* -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none; */
+       }
 
-        /*********************/
-        /* CUSTOM PROPERTIES */
-        /*********************/
-        :root {
-            --color-text: #111;
-        }
+       /*********************/
+       /* CUSTOM PROPERTIES */
+       /*********************/
+       :root {
+           --color-text: #111;
+       }
 
-        body,
-        html {
-            list-style-type: none;
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            max-height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
+    body,
+    html {
+        list-style-type: none;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        max-width: 1792px;
+        cursor: url(../assets/images/cursor.png) 30 25, auto;
+    }
+
+       
+
+       @font-face {
+           font-family: 'Typewriter';
+           src: url('../assets/fonts/typewriter.ttf') format('truetype');
+           font-weight: normal;
+           font-style: normal;
+       }
+
+       @font-face {
+           font-family: 'Typewriter';
+           src: url('../assets/fonts/typewriter-bold.otf') format('truetype');
+           font-weight: bold;
+           font-style: normal;
+       }
+
+       h1,
+       h2,
+       h3,
+       h4,
+       h5,
+       h6,
+       div {
+           font-family: 'Typewriter', sans-serif;
+           font-weight: bold;
+       }
+
+       p,
+       li,
+       button,
+       input {
+           font-family: 'Typewriter', sans-serif;
+       }
 
 
 
-                                /* body,
+       /* body,
                                 html {
                                     list-style-type: none;
                                     box-sizing: border-box;
@@ -41,8 +78,30 @@
                                     position: relative;
                                 } */
 
-        @font-face {
-            font-family: "Gotham Book";
-            src: url("../fonts/gotham_book-webfont.woff") format;
+       @font-face {
+           font-family: "Gotham Book";
+           src: url("../fonts/gotham_book-webfont.woff") format;
+       }
+
+
+    button:hover,
+    a:hover{
+        transform: rotate(360deg);
+        animation: shake 0.5s infinite;
+        filter: invert(1);
+        transition: 0.3s ease-in-out;
+                cursor: url(../assets/images/cursor.png) 25 25, auto;
+    }
+
+    @keyframes shake {
+        0% {
+         transform: rotate(-2deg);
         }
+        50% {
+         transform: rotate(2deg);
+        }
+        100% {
+         transform: rotate(-2deg);
+        }
+    }
 

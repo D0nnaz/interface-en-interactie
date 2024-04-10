@@ -12,8 +12,8 @@ body {
     width: 100%;
     height: 100%;
     background: green;
-    display: none;
-    z-index: 100;
+    display: block;
+    z-index: 100 !important;
 }
 
 #notebook {
@@ -22,18 +22,18 @@ body {
     top: 0;
     width: 200px;
     height: 100%;
-    background: red;
+    background-image: url(../assets/images/notebook.png);
     display: none;
 }
 
-#counter{
+#counter {
     font-size: 5em;
     color: white;
 }
 
 #story-button,
 #notebook-button,
-#exit-button {
+.exit-button {
     position: fixed;
     bottom: 10px;
 }
@@ -46,7 +46,7 @@ body {
     right: 10px;
 }
 
-#exit-button {
+.exit-button {
     left: 50%;
     transform: translateX(-50%);
 }
@@ -63,11 +63,11 @@ img {
     width: 15em;
 }
 
-#item1room1{
+#item1room1 {
     position: absolute;
     bottom: 12em;
     right: 21em;
-        width: 10em;
+    width: 10em;
 }
 
 #item3room1 {
@@ -77,16 +77,16 @@ img {
     width: 10em;
 }
 
-#item4room1{
+#item4room1 {
     position: absolute;
-        bottom: -13em;
-        right: -10em;
-        width: 25em;
+    bottom: -13em;
+    right: -10em;
+    width: 25em;
 }
 
 #item5room1 {
     position: absolute;
-        bottom: 8em;
-        left: 40em;
-        width: 5em;
+    bottom: 8em;
+    left: 40em;
+    width: 5em;
 }

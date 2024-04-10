@@ -4,18 +4,56 @@ body {
     background-position: top;
 }
 
-#room1{
-background-image: url(../assets/images/room1/room1.jpeg);
+@font-face {
+    font-family: 'Typewriter';
+    src: url('../assets/fonts/typewriter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'Typewriter';
+    src: url('../assets/fonts/typewriter-bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+#room1 {
+    background-image: url(../assets/images/room1/room1.jpeg);
+}
+
 #room2 {
     background-image: url(../assets/images/room2/room2.webp);
 }
+
 #room3 {
     background-image: url(../assets/images/room3/room3.jpeg);
 }
-    
 
-#overlay {
+#room4 {
+    background-image: url(../assets/images/newspaper.webp);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+    font-family: 'Typewriter', sans-serif;
+    font-weight: bold;
+}
+
+p,
+li,
+button {
+    font-family: 'Typewriter', sans-serif;
+}
+
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,43 +62,165 @@ background-image: url(../assets/images/room1/room1.jpeg);
     background: black;
     display: none;
     z-index: 100;
+    align-items: center;
+    justify-content: center;
 }
 
-#notebook {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background: red;
-    display: none;
-}
-
-#counter {
-    font-size: 5em;
+.overlay p {
     color: white;
+    max-width: 40%;
+    text-align: left;
+    white-space: pre-wrap;
 }
 
-#story-button,
-#notebook-button,
-#exit-button {
+#deeDeeOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: none;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+
+.disable-voiceover {
+    left: 1em;
+    background-image: url(../assets/images//buttons/pause.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+    ;
+    position: absolute;
+}
+
+.resume-voiceover {
+    left: 9em;
+    background-image: url(../assets/images//buttons/play.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+    position: absolute;
+    ;
+}
+
+.notebook {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    width: 30em;
+    height: 100%;
+    background-image: url(../assets/images/notebook.png);
+    display: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.notebook li {
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    list-style-type: none;
+    transform: rotate(5deg);
+}
+
+.counter {
+    font-size: 5em;
+    color: black;
+    margin-top: 1.4em;
+    transform: rotate(5deg);
+}
+
+.story-button,
+.notebook-button,
+.exit-button {
     position: fixed;
     bottom: 10px;
+    background-color: pink;
 }
 
-#story-button {
+.story-button {
     left: 10px;
+    background-image: url(../assets/images/buttons/story.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+    ;
 }
 
-#notebook-button {
+.notebook-button {
     right: 10px;
+    background-image: url(../assets/images/buttons/notes.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+
 }
 
-#exit-button {
+.exit-button {
     left: 50%;
     transform: translateX(-50%);
+    background-image: url(../assets/images/buttons/back.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+    position: absolute;
 }
 
+.exit-button:hover {
+    transform: rotate(360deg) translateX(0);
+    animation: exit-shake 0.5s infinite;
+}
+
+@keyframes exit-shake {
+    0% {
+        transform: rotate(-2deg) translateX(-50%);
+    }
+
+    50% {
+        transform: rotate(2deg) translateX(-50%);
+    }
+
+    100% {
+        transform: rotate(-2deg) translateX(-50%);
+    }
+}
+
+.close-button {
+    right: 1em;
+    position: absolute;
+    background-image: url(../assets/images/buttons/close.png);
+    padding: 3em;
+    background-position: center center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+}
 
 
 img {
@@ -75,11 +235,11 @@ img {
     right: -40em;
 }
 
-#ventilator{
-        width: 70em;
-            position: absolute;
-            bottom: -50em;
-            right: 30%;
+#ventilator {
+    width: 70em;
+    position: absolute;
+    bottom: -50em;
+    right: 30%;
 }
 
 
@@ -93,8 +253,8 @@ img {
     overflow: hidden;
 }
 
-#medicine{
-    width:2em;
+#medicine {
+    width: 2em;
     position: absolute;
     top: 26.8em;
     right: 32em;
@@ -102,17 +262,130 @@ img {
 }
 
 #hair {
-width: 12em;
+    width: 12em;
     position: absolute;
     top: 7em;
     left: 28.5em;
     opacity: 0.7;
 }
 
+#keys {
+    width: 3em;
+    right: 16em;
+    bottom: 34em;
+}
+
+#tooth {
+    width: 1em;
+    left: 10em;
+    bottom: 20em;
+}
+
+#laptop {
+    width: 14em;
+    bottom: 10em;
+    left: 44em;
+}
+
+#card {
+    width: 5em;
+    bottom: 12em;
+    right: 27em;
+}
+
+#hanger {
+        width: 5em;
+            top: 15em;
+            right: 20em;
+}
+
+#knife {
+    width: 6em;
+        bottom: 2em;
+        right: 20em;
+}
+
+#love {
+    width: 5em;
+        bottom: 18em;
+            left: 17em;
+}
+
+#phone {
+    width: 2em;
+    bottom: 34em;
+    right: 64em;
+}
+
+#taylor {
+    width: 12em;
+    position: absolute;
+    top: 5em;
+    right: 24em;
+    opacity: 0.7;
+    transform: skew(-5deg,4deg);
+}
+
+
 .item {
     transition: opacity 1s ease-out;
+    position: absolute;
 }
 
 .item.hide {
     opacity: 0 !important;
+}
+
+#knife.hide,
+#love.hide {
+    opacity: 1 !important;
+    filter: grayscale(100%);
+}
+
+#congratsSection {
+    display: none;
+        position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+}
+
+#publishButton {
+    position: absolute;
+    top: 33%;
+    left: 41%;
+    background-image: url(../assets/images/buttons/publish.png);
+        padding: 10em;
+            background-position: center center;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            border: none;
+            border-radius: 100px;
+            background-color: transparent;
+}
+
+#congratsSection #resetButton {
+    background-image: url(../assets/images/buttons/play-again.png);
+    padding: 5em 12em;
+    background-position: center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100px;
+    background-color: transparent;
+}
+
+#congratsSection img{
+    width: 20em;
+    image-rendering: optimizeQuality;
+            filter: blur(0px) grayscale(0)
+}
+
+#congratsSection .exit-button{
+    bottom: -10em;
+    position: absolute;
 }

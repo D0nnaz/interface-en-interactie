@@ -1,16 +1,21 @@
-#start-link {
-        display: none;
+.intro {
+        background-image: url(../assets/images/intro.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
 }
 
-a {
-        font-size: 10em;
-        background-color: red;
-        padding: 2em;
-        border-radius: 100px;
+#start-link {
+        background-image: url(../assets/images/buttons/start.png);
+        background-size: contain;
+        background-repeat: no-repeat;
         position: absolute;
+        left: 2em;
         bottom: 2em;
-        right: 2em;
+        padding: 5em 10em;
 }
+
 
 video {
         width: 100%;
@@ -19,3 +24,202 @@ video {
         position: relative;
         z-index: -1;
 }
+
+body {
+        background-color: #9c7c66;
+}
+
+#play-button {
+        z-index: 999;
+        position: fixed;
+        background-color: red;
+}
+
+.wall {
+        width: 100%;
+        height: 70em;
+        background-color: #b4774d;
+        transform: skewY(-11deg) translateY(-16em);
+        z-index: 1;
+        position: relative;
+}
+
+.door {
+        position: absolute;
+        z-index: 2;
+        bottom: 15em;
+        right: 7em;
+        width: 7em;
+}
+
+.door:hover {
+        filter: drop-shadow(0 0 0.75em white);
+}
+
+
+
+#room1.open-door {
+        width: 12em;
+        right: 5em;
+}
+
+#room2 {
+        bottom: 10em;
+        right: 27em;
+        width: 11em;
+}
+
+#room2.open-door {
+        width: 17em;
+        right: 24em;
+}
+
+
+
+#room3 {
+        bottom: 5em;
+        right: 53em;
+        width: 15em;
+}
+
+#room3.open-door {
+        width: 23em;
+        right: 45em;
+}
+
+.outside {
+        bottom: -2em;
+        left: 10em;
+        width: 15em;
+        width: 20em;
+        filter: invert(1);
+}
+
+.outside.open-door {
+        width: 32em;
+        right: 45em;
+}
+
+.outside:hover {
+        filter: drop-shadow(0 0 0.75em orange) invert(1);
+}
+
+#passwordOverlay,
+#gypsyQuestionForm {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: rgba(255, 255, 255, 0.928);
+        z-index: 9999;
+        display: none;
+}
+
+#gypsyQuestionForm {
+        flex-direction: column;
+}
+
+.passwordBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+}
+
+.passwordBox h2 {
+        margin: 0 0 1em 0;
+}
+
+.passwordBox input {
+        width: 100%;
+        margin: 0 0 20px 0;
+        background-color: gainsboro;
+        border: none;
+        border-radius: 100px;
+        height: 4em;
+        text-align: center;
+}
+
+h2 {
+        font-size: 3em;
+}
+
+#submitPassword,
+#checkGypsyAnswers {
+        background-image: url(../assets/images/buttons/submit.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 2.5em 8em;
+        border: none;
+        background-color: none;
+        background-color: transparent;
+}
+
+.close-password {
+        right: 1em;
+        top: 1em;
+        position: absolute;
+        background-image: url(../assets/images/buttons/close.png);
+        padding: 3em;
+        background-position: center center;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 100px;
+}
+
+.disney-button {
+        background-image: url(../assets/images/buttons/disney.png);
+        left: 1em;
+        position: absolute;
+        padding: 3em;
+        background-position: center center;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 100px;
+        background-color: transparent;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
+}
+
+.disney-button:hover {
+        transform: rotate(360deg) translateX(0);
+        animation: disney-shake 0.5s infinite;
+        filter: invert(0);
+}
+
+@keyframes disney-shake {
+        0% {
+                transform: rotate(-2deg) translateX(-50%) translateY(-50%);
+        }
+
+        50% {
+                transform: rotate(2deg) translateX(-50%) translateY(-50%);
+        }
+
+        100% {
+                transform: rotate(-2deg) translateX(-50%) translateY(-50%);
+        }
+}
+
+.wrong-answer {
+        color: red;
+}
+
+.disney {
+        position: absolute;
+        left: 50%;
+        top: 75%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 50em;
+        display: none;
+}
+

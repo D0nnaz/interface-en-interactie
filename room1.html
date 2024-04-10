@@ -13,33 +13,58 @@
 </head>
 
 <body id="room1">
-	<div id="overlay">
-		<p>Text overlay content</p>
-		<button id="disable-voiceover">Disable Voiceover</button>
-		<button id="resume-voiceover">Resume Voiceover</button>
+	<div id="room1-overlay" class="overlay">
+		<button id="room1-disable-voiceover" class="disable-voiceover"></button>
+		<button id="room1-resume-voiceover" class="resume-voiceover"></button>
+		<button id="room1-close-button" class="close-button"></button>
+		<p>
+My mother, Dee Dee, claimed that I, Gypsy, suffered from sleep apnea and thus needed a ventilator. That's
+how it all began. But it escalated further as she then claimed I suffered from epileptic seizures, requiring
+a plethora of medications.
+According to my mother, my mental development halted due to the progressing severity of my medical
+conditions, while the symptoms continued to pile up. Additionally, it was 'discovered' that I had hearing
+impairment, leading to a procedure for ear tubes insertion. At one point, they even claimed I was incapable
+of eating, resulting in the administration of tube feeding.
 
-		<button id="close-button">Close</button>
+Following an accident involving my grandfather's motorcycle, where I only sustained a minor scrape on my
+knee, Dee Dee rushed me to the hospital. Despite the minor injury, she insisted on getting a wheelchair for
+me, saying, 'You're in a
+wheelchair now, and you'll stay in it.' The list of purported ailments kept growing:
+
+- Asthma
+- Epilepsy
+- Hearing impairment
+- Visual impairment
+- Paralysis
+- Intellectual disability (mentally not older than 4 years)
+- Chromosomal abnormality
+- Leukemia, and so on...
+
+Then Dee Dee said to me, 'Your hair will soon start falling out. Maybe it's a good idea to shave it off
+before it falls
+out, as it will be less painful. I'll do it with you, in solidarity.' So, my mother shaved my hair, and of
+course, DeeDee was praised for her support.</p>
 	</div>
 
-	<img id="ventilator" class="item" src="./assets/images/room1/ventilator.png" alt="Item 1"
+	<img id="ventilator" class="room1-item item" src="./assets/images/room1/ventilator.png" alt="Item 1"
 		data-value="Ventilator - 7">
-	<img id="medicine" class="item" src="./assets/images/room1/medicine.png" alt="Item 2" data-value="Medicine - 8">
-	<img id="wheelchair" class="item" src="./assets/images/room1/wheelchair.jpeg" alt="Item 3"
+	<img id="medicine" class="room1-item item" src="./assets/images/room1/medicine.png" alt="Item 2"
+		data-value="Medicine - 8">
+	<img id="wheelchair" class="room1-item item" src="./assets/images/room1/wheelchair.jpeg" alt="Item 3"
 		data-value="Wheelchair - 9">
-	<img id="feeding-tube" class="item" src="./assets/images/room1/feeding-tube.png" alt="Item 4"
+	<img id="feeding-tube" class="room1-item item" src="./assets/images/room1/feeding-tube.png" alt="Item 4"
 		data-value="Feeding tube - 4">
-	<img id="hair" class="item" src="./assets/images/room1/hair.png" alt="Item 5" data-value="Hair - 5">
+	<img id="hair" class="room1-item item" src="./assets/images/room1/hair.png" alt="Item 5" data-value="Hair - 5">
 
-	<button id="story-button">Verhaal</button>
+	<button id="room1-story-button" class="story-button"></button>
 
-	<div id="notebook">
-		<div id="counter">0/5</div>
-		<!-- Add other content for the notebook -->
+	<div id="room1-notebook" class="notebook">
+		<div id="room1-counter" class="counter">0/5</div>
 	</div>
 
-	<button id="notebook-button">Open Notitieboekje</button>
+	<button id="room1-notebook-button" class="notebook-button"></button>
 
-	<a href="hallway.html" id="exit-button">Exit</a>
+	<a class="exit-button"></a>
 
 	<script src="/scripts/room.js"></script>
 </body>
