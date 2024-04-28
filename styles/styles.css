@@ -4,9 +4,9 @@
            box-sizing: border-box;
            padding: 0;
            margin: 0;
-           /* -webkit-user-select: none;
+           -webkit-user-select: none;
                 -ms-user-select: none;
-                user-select: none; */
+                user-select: none;
        }
 
        /*********************/
@@ -24,7 +24,7 @@
         margin: 0;
         overflow: hidden;
         max-width: 1792px;
-        /* cursor: url(../assets/images/cursor.png) 30 25, auto; */
+        cursor: url(../assets/images/cursor.png) 30 25, auto;
     }
 
        

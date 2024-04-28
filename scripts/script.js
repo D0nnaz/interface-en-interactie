@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const gypsyQuestions = [
     { question: "Question 1 about Gypsy?", answer: "Sleep apnea" },
     { question: "Question 2 about Gypsy?", answer: "2005" },
-    { question: "Question 3 about Gypsy?", answer: "3718" },
+    { question: "Question 3 about Gypsy?", answer: "3781" },
   ];
 
   const audioDoor = new Audio("../assets/mp3/dooropen.mp3");
